@@ -1,27 +1,20 @@
-In this DevOps task, you need to build and deploy a full-stack CRUD application using the MEAN stack (MongoDB, Express, Angular 15, and Node.js). The backend will be developed with Node.js and Express to provide REST APIs, connecting to a MongoDB database. The frontend will be an Angular application utilizing HTTPClient for communication.  
+# MEAN Stack DevOps Assignment
 
-The application will manage a collection of tutorials, where each tutorial includes an ID, title, description, and published status. Users will be able to create, retrieve, update, and delete tutorials. Additionally, a search box will allow users to find tutorials by title.
+## Project Overview
+A full-stack MEAN application containerized with Docker and deployed via a GitHub Actions CI/CD pipeline.
 
-## Project setup
+## Infrastructure Details
+- **Cloud Provider:** AWS (EC2 Instance)
+- **Containerization:** Docker & Docker Compose
+- **Web Server:** Nginx (configured as a Reverse Proxy and SPA router)
+- **CI/CD:** GitHub Actions
 
-### Node.js Server
+## Setup & Deployment Instructions
+1. **Clone the repo:** `git clone <your-repo-link>`
+2. **Local Development:** Run `docker-compose up --build` to start the stack locally.
+3. **Production Deployment:** - Changes pushed to the `main` branch trigger the GitHub Action.
+   - The workflow builds images, pushes to Docker Hub, and deploys to the EC2 instance.
 
-cd backend
-
-npm install
-
-You can update the MongoDB credentials by modifying the `db.config.js` file located in `app/config/`.
-
-Run `node server.js`
-
-### Angular Client
-
-cd frontend
-
-npm install
-
-Run `ng serve --port 8081`
-
-You can modify the `src/app/services/tutorial.service.ts` file to adjust how the frontend interacts with the backend.
-
-Navigate to `http://localhost:8081/`
+## Nginx Configuration
+To handle Angular's client-side routing and prevent 404 errors on refresh, the following `try_files` directive was implemented:
+`try_files $uri $uri/ /index.html;`
