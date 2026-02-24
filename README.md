@@ -19,4 +19,5 @@ A full-stack MEAN application containerized with Docker and deployed via a GitHu
 To handle Angular's client-side routing and prevent 404 errors on refresh, the following `try_files` directive was implemented:
 `try_files $uri $uri/ /index.html;`
 
-
+## Deliverables & Screenshots
+All required screenshots (CI/CD execution, Docker Hub pushes, and working UI) are located in the `/Screenshots` directory.
