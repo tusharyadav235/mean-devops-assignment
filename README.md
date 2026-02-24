@@ -18,3 +18,19 @@ A full-stack MEAN application containerized with Docker and deployed via a GitHu
 ## Nginx Configuration
 To handle Angular's client-side routing and prevent 404 errors on refresh, the following `try_files` directive was implemented:
 `try_files $uri $uri/ /index.html;`
+
+### 1. Docker Hub Build & Push
+This screenshot confirms that the CI/CD pipeline successfully pushed the latest images to Docker Hub.
+![Docker Hub Status](./Screenshots/docker-hub.png)
+
+### 2. CI/CD Workflow Success
+Proof of successful GitHub Actions execution for build and deployment stages.
+![CI/CD Success](./Screenshots/CI-CD Success.png)
+
+### 3. Application UI
+The live application running on AWS EC2 at http://54.234.227.98/.
+![App UI](./Screenshots/Running-app.png)
+
+### 4. Running containers
+The Live Running containers
+![Runbing containers Success](./Screenshots/docker-containers.png)
